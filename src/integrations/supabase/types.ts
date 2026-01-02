@@ -14,7 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      consultation_messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          role: string
+          session_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          role: string
+          session_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          role?: string
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "consultation_messages_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "funnel_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      funnel_sessions: {
+        Row: {
+          created_at: string
+          id: string
+          selected_problems: Database["public"]["Enums"]["problem_type"][]
+          updated_at: string
+          user_name: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          selected_problems?: Database["public"]["Enums"]["problem_type"][]
+          updated_at?: string
+          user_name: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          selected_problems?: Database["public"]["Enums"]["problem_type"][]
+          updated_at?: string
+          user_name?: string
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          address: string
+          created_at: string
+          id: string
+          package_type: Database["public"]["Enums"]["problem_type"][]
+          payment_method: string
+          phone_number: string
+          session_id: string
+          status: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          id?: string
+          package_type: Database["public"]["Enums"]["problem_type"][]
+          payment_method?: string
+          phone_number: string
+          session_id: string
+          status?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          id?: string
+          package_type?: Database["public"]["Enums"]["problem_type"][]
+          payment_method?: string
+          phone_number?: string
+          session_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "funnel_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      questionnaire_responses: {
+        Row: {
+          created_at: string
+          id: string
+          problem_type: Database["public"]["Enums"]["problem_type"]
+          responses: Json
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          problem_type: Database["public"]["Enums"]["problem_type"]
+          responses?: Json
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          problem_type?: Database["public"]["Enums"]["problem_type"]
+          responses?: Json
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "questionnaire_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "funnel_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +151,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      problem_type: "ejaculation" | "size" | "erection"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +278,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      problem_type: ["ejaculation", "size", "erection"],
+    },
   },
 } as const
