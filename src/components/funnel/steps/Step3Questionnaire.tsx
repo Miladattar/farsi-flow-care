@@ -62,13 +62,14 @@ export const Step3Questionnaire = () => {
       // Save questionnaire responses to database
       setIsLoading(true);
       try {
+        const responsesJson = JSON.parse(JSON.stringify(questionnaireAnswers[currentProblem]));
         const { error } = await supabase
           .from('questionnaire_responses')
-          .insert({
+          .insert([{
             session_id: sessionId as string,
-            problem_type: currentProblem,
-            responses: questionnaireAnswers[currentProblem] as unknown as Record<string, unknown>,
-          });
+            problem_type: currentProblem as "ejaculation" | "size" | "erection",
+            responses: responsesJson,
+          }]);
 
         if (error) throw error;
 
