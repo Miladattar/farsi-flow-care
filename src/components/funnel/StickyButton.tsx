@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +12,7 @@ interface StickyButtonProps {
   isLoading?: boolean;
 }
 
-export const StickyButton = ({ 
+export const StickyButton = forwardRef<HTMLDivElement, StickyButtonProps>(({ 
   children, 
   onClick, 
   disabled,
@@ -20,9 +20,9 @@ export const StickyButton = ({
   className,
   type = 'button',
   isLoading = false,
-}: StickyButtonProps) => {
+}, ref) => {
   return (
-    <div className="sticky bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pt-8">
+    <div ref={ref} className="sticky bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background via-background to-transparent pt-8">
       <div className="max-w-lg mx-auto">
         <Button
           type={type}
@@ -45,4 +45,6 @@ export const StickyButton = ({
       </div>
     </div>
   );
-};
+});
+
+StickyButton.displayName = 'StickyButton';
