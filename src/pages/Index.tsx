@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { FunnelContainer } from '@/components/funnel/FunnelContainer';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { Step1Welcome } from '@/components/funnel/steps/Step1Welcome';
@@ -9,7 +11,16 @@ import { Step6Offer } from '@/components/funnel/steps/Step6Offer';
 import { Step7Order } from '@/components/funnel/steps/Step7Order';
 
 const Index = () => {
-  const { currentStep } = useFunnelStore();
+  const { currentStep, reset } = useFunnelStore();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Reset funnel when ?reset=true is in URL
+  useEffect(() => {
+    if (searchParams.get('reset') === 'true') {
+      reset();
+      setSearchParams({});
+    }
+  }, [searchParams, reset, setSearchParams]);
 
   const renderStep = () => {
     switch (currentStep) {

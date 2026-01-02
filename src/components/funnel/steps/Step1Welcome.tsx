@@ -86,6 +86,21 @@ export const Step1Welcome = () => {
               <span>بدون نیاز به مراجعه</span>
             </div>
           </div>
+
+          {/* Reset Link - shows if user has previous session */}
+          {userName && (
+            <div className="pt-4">
+              <button
+                onClick={() => {
+                  useFunnelStore.getState().reset();
+                  setName('');
+                }}
+                className="text-sm text-muted-foreground hover:text-primary underline transition-colors"
+              >
+                شروع مجدد با نام جدید
+              </button>
+            </div>
+          )}
         </div>
       </StepContent>
 
