@@ -42,6 +42,12 @@ export const Step6Offer = () => {
                   </div>
                 ))}
               </div>
+              <div className="border-t pt-3 mt-3">
+                <div className="text-center">
+                  <span className="text-2xl font-bold text-primary">۱,۳۸۰,۰۰۰</span>
+                  <span className="text-sm text-muted-foreground mr-1">تومان</span>
+                </div>
+              </div>
               <p className="text-xs text-center text-muted-foreground">{pkg.duration}</p>
             </div>
           </div>
