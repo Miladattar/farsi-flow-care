@@ -10,7 +10,7 @@ import { toast } from 'sonner';
 import { Check, Phone, MapPin, CreditCard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export const Step7Order = () => {
+export const Step8Order = () => {
   const { sessionId, selectedProblems, userName, reset } = useFunnelStore();
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');

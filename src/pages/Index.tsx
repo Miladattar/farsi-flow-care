@@ -6,9 +6,10 @@ import { Step1Welcome } from '@/components/funnel/steps/Step1Welcome';
 import { Step2ProblemSelect } from '@/components/funnel/steps/Step2ProblemSelect';
 import { Step3Questionnaire } from '@/components/funnel/steps/Step3Questionnaire';
 import { Step4Empathy } from '@/components/funnel/steps/Step4Empathy';
-import { Step5Solution } from '@/components/funnel/steps/Step5Solution';
-import { Step6Offer } from '@/components/funnel/steps/Step6Offer';
-import { Step7Order } from '@/components/funnel/steps/Step7Order';
+import { Step5Consultation } from '@/components/funnel/steps/Step5Consultation';
+import { Step6Solution } from '@/components/funnel/steps/Step6Solution';
+import { Step7Offer } from '@/components/funnel/steps/Step7Offer';
+import { Step8Order } from '@/components/funnel/steps/Step8Order';
 
 const Index = () => {
   const { currentStep, reset } = useFunnelStore();
@@ -28,9 +29,10 @@ const Index = () => {
       case 2: return <Step2ProblemSelect />;
       case 3: return <Step3Questionnaire />;
       case 4: return <Step4Empathy />;
-      case 5: return <Step5Solution />;
-      case 6: return <Step6Offer />;
-      case 7: return <Step7Order />;
+      case 5: return <Step5Consultation />;
+      case 6: return <Step6Solution />;
+      case 7: return <Step7Offer />;
+      case 8: return <Step8Order />;
       default: return <Step1Welcome />;
     }
   };
