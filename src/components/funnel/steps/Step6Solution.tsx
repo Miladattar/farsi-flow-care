@@ -5,7 +5,7 @@ import { useFunnelStore } from '@/stores/funnelStore';
 import { solutionContent } from '@/data/questionnaireData';
 import { Zap, Droplets, Activity } from 'lucide-react';
 
-export const Step5Solution = () => {
+export const Step6Solution = () => {
   const { selectedProblems, nextStep } = useFunnelStore();
   const primaryProblem = selectedProblems[0];
   const content = solutionContent[primaryProblem];

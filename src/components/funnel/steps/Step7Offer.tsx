@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Star, Check, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export const Step6Offer = () => {
+export const Step7Offer = () => {
   const navigate = useNavigate();
   const { userName, selectedProblems, nextStep } = useFunnelStore();
   const [showTestimonials, setShowTestimonials] = useState(false);
