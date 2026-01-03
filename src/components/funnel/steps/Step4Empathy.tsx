@@ -1,5 +1,6 @@
 import { StepContent } from '../StepContent';
 import { StickyButton } from '../StickyButton';
+import { BackButton } from '../BackButton';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { empathyContent, problemLabels } from '@/data/questionnaireData';
 import { Heart } from 'lucide-react';
@@ -12,6 +13,7 @@ export const Step4Empathy = () => {
   return (
     <>
       <StepContent>
+        <BackButton />
         <div className="space-y-6">
           <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center">
             <Heart className="w-8 h-8 text-primary" />

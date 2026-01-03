@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StepContent } from '../StepContent';
 import { StickyButton } from '../StickyButton';
+import { BackButton } from '../BackButton';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { packageDetails, testimonials, problemLabels } from '@/data/questionnaireData';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -20,6 +21,7 @@ export const Step6Offer = () => {
   return (
     <>
       <StepContent>
+        <BackButton />
         <div className="space-y-5">
           <div className="text-center bg-gradient-to-b from-primary/10 to-transparent rounded-2xl p-5">
             <p className="text-sm text-muted-foreground mb-1">با توجه به پاسخ‌هایی که دادید</p>

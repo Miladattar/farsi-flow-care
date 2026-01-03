@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StepContent } from '../StepContent';
 import { StickyButton } from '../StickyButton';
+import { BackButton } from '../BackButton';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -67,6 +68,7 @@ export const Step7Order = () => {
   return (
     <>
       <StepContent>
+        <BackButton />
         <div className="space-y-6">
           <div className="text-center">
             <h2 className="text-xl font-bold text-foreground">ثبت سفارش</h2>
