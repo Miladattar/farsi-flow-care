@@ -5,6 +5,7 @@ import { StickyButton } from '../StickyButton';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import doctorWelcome from '@/assets/doctor-welcome.jpg';
 
 export const Step1Welcome = () => {
   const { userName, setUserName, setSessionId, nextStep } = useFunnelStore();
@@ -43,8 +44,8 @@ export const Step1Welcome = () => {
       <StepContent>
         <div className="text-center space-y-6">
           {/* Welcome Icon */}
-          <div className="w-20 h-20 mx-auto rounded-2xl gradient-medical flex items-center justify-center shadow-medical">
-            <span className="text-4xl">👋</span>
+          <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-medical">
+            <img src={doctorWelcome} alt="کلینیک نوین" className="w-full h-full object-cover" />
           </div>
 
           {/* Welcome Text */}
