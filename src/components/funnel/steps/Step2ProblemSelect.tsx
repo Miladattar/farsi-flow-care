@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StepContent } from '../StepContent';
 import { StickyButton } from '../StickyButton';
+import { BackButton } from '../BackButton';
 import { useFunnelStore, ProblemType } from '@/stores/funnelStore';
 import { problemLabels } from '@/data/questionnaireData';
 import { cn } from '@/lib/utils';
@@ -56,6 +57,7 @@ export const Step2ProblemSelect = () => {
   return (
     <>
       <StepContent>
+        <BackButton />
         <div className="space-y-6">
           {/* Greeting */}
           <div className="text-center space-y-2">

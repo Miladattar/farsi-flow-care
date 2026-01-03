@@ -1,5 +1,6 @@
 import { StepContent } from '../StepContent';
 import { StickyButton } from '../StickyButton';
+import { BackButton } from '../BackButton';
 import { useFunnelStore } from '@/stores/funnelStore';
 import { solutionContent } from '@/data/questionnaireData';
 import { Zap, Droplets, Activity } from 'lucide-react';
@@ -18,6 +19,7 @@ export const Step5Solution = () => {
   return (
     <>
       <StepContent>
+        <BackButton />
         <div className="space-y-6">
           <div className="text-center">
             <h2 className="text-xl font-bold text-foreground">{content.title}</h2>
